@@ -5,10 +5,10 @@ import java.util.List;
 import com.boaretriever.service.BOAService;
 
 public class BOAView {
-    public void display(String URL) {
+    public void display() {
         System.out.println("Retrieving data from BOA...");
         BOAService service = new BOAService();
-        List<String> data = service.RetrieveBOAData(URL);
+        List<String> data = service.RetrieveBOAData();
         if (data.isEmpty() || data == null) {
             System.out.println("No relevant data found in BOA.");
             return;
