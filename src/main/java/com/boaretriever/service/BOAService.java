@@ -13,14 +13,17 @@ import com.boaretriever.util.Utils;
 
 public class BOAService {
     public List<String> RetrieveBOAData() {
-        // Logic to retrieve data from BOA
-        BOAController controller = new BOAController(Utils.replaceFechaPlaceholderForToday(Utils.BOA_URL_PROPERTY));
-        BOA[] data = controller.GetBOAData();
         List<String> mappedData = new ArrayList<>();
-
+        // Logic to retrieve data from BOA
         try{
             ConfigManager config = ConfigManager.getInstance();
             String searchedWord = config.getProperty("boa.searchedWord", "informática");
+            // String searchedWordURL = URLEncoder.encode(searchedWord, StandardCharsets.UTF_8.toString());
+            String date = config.getProperty("boa.date", Utils.getTodayAsYYYYMMDD());
+            
+            System.out.println("BOA Retriever from: " + Utils.transformDateToDDMMYYYY(date) + " searching for: " + searchedWord);
+            BOAController controller = new BOAController(Utils.replaceFechaPlaceholderForDate(Utils.BOA_URL_PROPERTY, date));
+            BOA[] data = controller.GetBOAData();
     
             for (BOA item : data) {
                 if (item.getTexto() == null) {

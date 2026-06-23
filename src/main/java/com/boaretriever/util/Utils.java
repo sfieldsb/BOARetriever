@@ -15,7 +15,12 @@ public final class Utils {
         return LocalDate.now().format(formatter);
     }
 
-    public static String replaceFechaPlaceholderForToday(String baseURL) {
-        return baseURL.replace("{fecha}", getTodayAsYYYYMMDD());
+    public static String replaceFechaPlaceholderForDate(String baseURL, String date) {
+        return baseURL.replace("{fecha}", date);
+    }
+
+    public static String transformDateToDDMMYYYY(String date) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        return LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyyMMdd")).format(formatter);
     }
 }

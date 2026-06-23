@@ -7,7 +7,6 @@ Pequeño rastreador diario del boletín de Aragón (BOA) para encontrar palabras
  - Obtener en el BOA del día de hoy cualquier publicación que tenga la palabra "Informática". La palabra puede cambiar dependiendo lo que ponga en el fichero de properties. No es case sensitive.
 
 ## Acciones por realizar
-- Pasar la URL a un fichero de constantes y no al properties
 - Que lo pueda exportar a un fichero
 - Que el resultado lo envíe por email
 - Tests
