@@ -29,7 +29,7 @@ public class BOAService {
                 if (item.getTexto() == null) {
                     throw new IllegalArgumentException("Retrieved data is invalid");
                 } else if (item.getTexto().toLowerCase().contains(searchedWord.toLowerCase())) {
-                    mappedData.add(item.getTexto());
+                    mappedData.add(item.getTitulo());
                 }
             }
             return mappedData;

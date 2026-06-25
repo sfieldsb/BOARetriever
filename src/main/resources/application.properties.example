@@ -1,0 +1,23 @@
+# Properties configuration
+
+# Logging configuration
+logging.level=INFO
+app.name=BOARetriever
+app.version=1.0.0
+
+# Basic information
+boa.searchedWord=Informática
+# boa.date=20260619
+boa.export=email
+boa.export.path=C:/Users/Sandra/Documents/BOAExports
+
+# Email delivery configuration
+boa.email.smtp.host=smtp.gmail.com
+boa.email.smtp.port=587
+boa.email.smtp.username={{email}}
+boa.email.smtp.password={{password}}
+boa.email.from={{email}}
+boa.email.to={{sending email}}
+boa.email.subject=Boletin BOA hoy
+boa.email.smtp.auth=true
+boa.email.smtp.starttls=true
